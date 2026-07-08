@@ -2,6 +2,10 @@ const { Client, LocalAuth } = require('whatsapp-web.js');
 const qrcode = require('qrcode-terminal');
 
 const client = new Client({
+    puppeteer: {
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        executablePath: '/usr/bin/chromium'
+    },
     authStrategy: new LocalAuth()
 });
 
@@ -16,7 +20,7 @@ client.on('ready', () => {
 
 client.on('message', async message => {
     if(message.body.toLowerCase() === 'hi') {
-        message.reply('Hello! Main Railway pe chal raha hun 😎');
+        message.reply('Hello! Main Railway pe chal raha hun 🚀');
     }
     if(message.body.toLowerCase() === 'help') {
         message.reply('Commands: hi, help');
