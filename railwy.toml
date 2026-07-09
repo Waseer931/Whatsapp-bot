@@ -1,0 +1,7 @@
+[build]
+builder = "nixpacks"
+nixPkgs = ["chromium", "nss", "nspr", "libatomic"]
+
+[deploy]
+startCommand = "node index.js"
+healthcheckPath = "/"

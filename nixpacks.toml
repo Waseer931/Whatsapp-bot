@@ -1,8 +1,0 @@
-[phases.setup]
-nixPkgs = ["chromium", "glib", "pango", "atk", "cairo", "libgbm", "libnss", "libxcomposite", "libxdamage", "libxfixes", "libxrandr", "libxkbcommon"]
-
-[phases.install]
-cmds = ["npm ci"]
-
-[start]
-cmd = "node index.js"
